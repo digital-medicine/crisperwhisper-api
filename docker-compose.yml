@@ -1,0 +1,20 @@
+services:
+  crisper-whisper:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      - HF_TOKEN=${HF_TOKEN}
+      - ACCESS_TOKEN=${ACCESS_TOKEN}
+      - DEBUG=${DEBUG:-false}
+    volumes:
+      - hf-cache:/root/.cache/huggingface
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+volumes:
+  hf-cache:
