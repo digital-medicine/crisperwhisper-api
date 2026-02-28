@@ -1,4 +1,4 @@
-# CrisperWhisper
+# CrisperWhisper API Docker
 
 A FastAPI microservice for automatic speech recognition with word-level timestamps, built on [Nyra Health's CrisperWhisper](https://huggingface.co/nyrahealth/CrisperWhisper) — a fine-tuned variant of OpenAI's Whisper optimized for precise word boundaries and pause handling.
 
